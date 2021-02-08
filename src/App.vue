@@ -1,15 +1,17 @@
 <template>
-  <Fuck />
+  <div>
+    导航栏
+    <router-link to="/">fuck</router-link>
+    |
+    <router-link to="/fuck">fuck2</router-link>
+  </div>
+  <hr/>
+  <router-view />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import Fuck from './components/Fuck.vue'
-
 export default {
   name: 'App',
-  components: {
-    Fuck
-  }
+  components: {}
 }
 </script>
