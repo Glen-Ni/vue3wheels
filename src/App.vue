@@ -1,11 +1,4 @@
 <template>
-  <div>
-    导航栏
-    <router-link to="/">fuck</router-link>
-    |
-    <router-link to="/fuck">fuck2</router-link>
-  </div>
-  <hr/>
   <router-view />
 </template>
 
@@ -15,3 +8,6 @@ export default {
   components: {}
 }
 </script>
+<style lang="scss" scoped>
+  
+</style>
