@@ -1,6 +1,6 @@
 <template>
   <div class="topNav">
-    <div class="logo">好家伙UI</div>
+    <div class="logo" @click="toggleMenu">好家伙UI</div>
     <div class="menu">
       <router-link to="/">Home</router-link>
       <router-link to="/doc">文档</router-link>
@@ -10,9 +10,18 @@
 </template>
 
 <script>
+import { inject } from "vue";
 export default {
   name: "TopNav",
   components: {},
+  setup() {
+    const asideVisible = inject("asideVisible");
+    console.log("topnav中：", asideVisible.value);
+    const toggleMenu = () => {
+      asideVisible.value = !asideVisible.value;
+    };
+    return toggleMenu;
+  },
 };
 </script>
 <style lang="scss" scoped>

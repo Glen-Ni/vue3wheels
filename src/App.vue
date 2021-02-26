@@ -3,9 +3,14 @@
 </template>
 
 <script>
+import { provide, ref } from 'vue'
 export default {
   name: 'App',
-  components: {}
+  components: {},
+  setup() {
+    const asideVisible = ref(false);
+    provide('asideVisible', asideVisible);
+  }
 }
 </script>
 <style lang="scss" scoped>
