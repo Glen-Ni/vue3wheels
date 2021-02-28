@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <TopNav />
-  </div>
+  <TopNav />
   <div class="content">
     <aside v-if="asideVisible">
       <h2>组件列表</h2>
@@ -34,6 +32,36 @@ export default {
   setup() {
     const asideVisible = inject("asideVisible");
     console.log("doc中：", asideVisible);
+    return { asideVisible };
   },
 };
 </script>
+<style lang="scss">
+.content {
+  display: flex;
+  > aside {
+    flex-shrink: 0;
+    background: lightblue;
+    width: 150px;
+    padding: 16px;
+    // position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 70px;
+    height: 100%;
+    > h2 {
+      margin-bottom: 4px;
+    }
+    > ol {
+      > li {
+        padding: 4px 0;
+      }
+    }
+  }
+  > main {
+    flex-grow: 1;
+    padding: 16px;
+    background: lightgreen;
+  }
+}
+</style>

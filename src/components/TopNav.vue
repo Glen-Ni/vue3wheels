@@ -19,8 +19,9 @@ export default {
     console.log("topnav中：", asideVisible.value);
     const toggleMenu = () => {
       asideVisible.value = !asideVisible.value;
+      console.log("clicked");
     };
-    return toggleMenu;
+    return { toggleMenu };
   },
 };
 </script>
@@ -29,8 +30,10 @@ export default {
   background-color: yellow;
   display: flex;
   padding: 16px;
+  z-index: 10;
   > .logo {
     margin-right: auto;
+    cursor: pointer;
   }
   > .menu {
     display: flex;
