@@ -30,6 +30,7 @@ export default {
   background-color: yellow;
   display: flex;
   padding: 16px;
+  position: relative;
   z-index: 10;
   > .logo {
     margin-right: auto;
