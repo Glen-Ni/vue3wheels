@@ -5,6 +5,9 @@
   text-align: center;
   color: #2c3e50;
 }
+span,div {
+  box-sizing: border-box;
+}
 body,
 h1,
 h2,
