@@ -20,4 +20,28 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.banner {
+  height: 500px;
+  padding: 100px;
+  h1 {
+    font-size: 30px;
+    line-height: 60px;
+  }
+  h2 {
+    font-size: 24px;
+    line-height: 30px;
+  }
+  .actions {
+    a {
+      display: inline-block;
+      margin: 24px 8px;
+      line-height: 24px;
+      width: 80px;
+      border: 1px solid #888;
+      border-radius: 12px;
+      color: #777;
+      background-color: #fff;
+    }
+  }
+}
 </style>
