@@ -1,10 +1,11 @@
 <template>
   <div class="topNav">
-    <div class="logo" @click="toggleMenu">好家伙UI</div>
+    <div class="logo">好家伙UI</div>
     <div class="menu">
       <router-link to="/">Home</router-link>
       <router-link to="/doc">文档</router-link>
     </div>
+    <span class="toogleAside" @click="toogleAside"> </span>
   </div>
   <hr />
 </template>
@@ -17,11 +18,11 @@ export default {
   setup() {
     const asideVisible = inject("asideVisible");
     console.log("topnav中：", asideVisible.value);
-    const toggleMenu = () => {
+    const toogleAside = () => {
       asideVisible.value = !asideVisible.value;
       console.log("clicked");
     };
-    return { toggleMenu };
+    return { toogleAside };
   },
 };
 </script>
@@ -36,7 +37,6 @@ export default {
   justify-content: center;
   > .logo {
     margin-right: auto;
-    cursor: pointer;
   }
   > .menu {
     display: flex;
@@ -44,13 +44,27 @@ export default {
       margin: 0 1em;
     }
   }
+  > .toogleAside {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    cursor: pointer;
+    display: none;
+  }
   @media (max-width: 500px) {
     > .menu {
       display: none;
     }
     > .logo {
-        margin: 0 auto;
-      }
+      margin: 0 auto;
+    }
+    > .toogleAside {
+      display: block;
+    }
   }
 }
 </style>

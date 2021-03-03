@@ -3,16 +3,16 @@
 </template>
 
 <script>
-import { provide, ref } from 'vue'
+import { provide, ref } from "vue";
 export default {
-  name: 'App',
+  name: "App",
   components: {},
   setup() {
-    const asideVisible = ref(false);
-    provide('asideVisible', asideVisible);
-  }
-}
+    const width = document.documentElement.clientWidth;
+    const asideVisible = ref(width > 500 ? true : false);
+    provide("asideVisible", asideVisible);
+  },
+};
 </script>
 <style lang="scss" scoped>
-  
 </style>
