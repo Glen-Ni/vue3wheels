@@ -18,7 +18,9 @@
         </li>
       </ol>
     </aside>
-    <main>主内容区</main>
+    <main>
+      <router-view />
+    </main>
   </div>
 </template>
 <script>

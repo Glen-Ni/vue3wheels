@@ -5,7 +5,7 @@
     <h2>用了好家伙UI，我直呼好家伙!</h2>
     <p class="actions">
       <a href="###">GitHub</a>
-      <a href="###">开始</a>
+      <a href="#/doc">开始</a>
     </p>
   </div>
 </template>
