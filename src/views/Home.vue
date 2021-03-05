@@ -4,8 +4,8 @@
     <h1>好家伙 UI</h1>
     <h2>用了好家伙UI，我直呼好家伙!</h2>
     <p class="actions">
-      <a href="###">GitHub</a>
-      <a href="#/doc">开始</a>
+      <a href="https://github.com/Glen-Ni/vue3wheels">GitHub</a>
+      <router-link to="/doc">开始</router-link>
     </p>
   </div>
 </template>
@@ -35,10 +35,12 @@ export default {
     a {
       display: inline-block;
       margin: 24px 8px;
-      line-height: 24px;
+      $h: 28px;
+      height: $h;
+      line-height: $h;
       width: 80px;
       border: 1px solid #888;
-      border-radius: 12px;
+      border-radius: $h/2;
       color: #777;
       background-color: #fff;
     }

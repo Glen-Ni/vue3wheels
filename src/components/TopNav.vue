@@ -17,10 +17,8 @@ export default {
   components: {},
   setup() {
     const asideVisible = inject("asideVisible");
-    console.log("topnav中：", asideVisible.value);
     const toogleAside = () => {
       asideVisible.value = !asideVisible.value;
-      console.log("clicked");
     };
     return { toogleAside };
   },
@@ -31,7 +29,9 @@ export default {
   background-color: yellow;
   display: flex;
   padding: 16px;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
   z-index: 10;
   align-items: center;
   justify-content: center;
