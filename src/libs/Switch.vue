@@ -1,5 +1,5 @@
 <template>
-  <div :class="{ button: true, checked }" @click="toggle">
+  <div :class="{ button: true, checked: value }" @click="toggle">
     <span class="dot"></span>
   </div>
 </template>
@@ -7,12 +7,14 @@
 import { ref } from "vue";
 export default {
   name: "Switch",
-  setup() {
-    const checked = ref(false);
+  props: {
+    value: Boolean,
+  },
+  setup(props, context) {
     const toggle = () => {
-      checked.value = !checked.value;
+      context.emit("input", !props.value);
     };
-    return { checked, toggle };
+    return { toggle };
   },
 };
 </script>
@@ -34,6 +36,7 @@ $h2: $h - 4px;
     height: $h2;
     border-radius: $h2 / 2;
     background: white;
+    transition: left 0.2s;
   }
   &.checked {
     background-color: blue;
