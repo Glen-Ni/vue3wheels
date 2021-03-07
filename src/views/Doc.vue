@@ -63,6 +63,7 @@ export default {
     flex-grow: 1;
     padding: 16px;
     padding-left: $asideWidth + 16px;
+    padding-top: 60px;
     background: lightgreen;
   }
 }

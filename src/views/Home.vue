@@ -22,7 +22,8 @@ export default {
 <style lang="scss" scoped>
 .banner {
   height: 500px;
-  padding: 100px;
+  padding: 100px 0;
+  text-align: center;
   h1 {
     font-size: 30px;
     line-height: 60px;

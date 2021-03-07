@@ -35,6 +35,7 @@ export default {
   z-index: 10;
   align-items: center;
   justify-content: center;
+  width: 100%;
   > .logo {
     margin-right: auto;
   }
