@@ -4,7 +4,6 @@
   </div>
 </template>
 <script>
-import { ref } from "vue";
 export default {
   name: "Switch",
   props: {
@@ -12,7 +11,7 @@ export default {
   },
   setup(props, context) {
     const toggle = () => {
-      context.emit("input", !props.value);
+      context.emit("update:value", !props.value);
     };
     return { toggle };
   },
