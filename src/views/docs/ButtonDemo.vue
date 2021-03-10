@@ -1,9 +1,9 @@
 <template>
   <div>
-    <Button
-      @click="handleClick"
-      size="small"
-    >啊啊</Button>
+    <Button>按钮</Button>
+    <Button type="button">按钮</Button>
+    <Button type="link">按钮</Button>
+    <Button type="text">按钮</Button>
   </div>
 </template>
 <script lang="ts">
