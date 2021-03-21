@@ -1,5 +1,5 @@
 <template>
-  <div :class="{ button: true, checked: value }" @click="toggle">
+  <div class="hao-switch" :class="{ 'hao-checked': value }" @click="toggle">
     <span class="dot"></span>
   </div>
 </template>
@@ -17,10 +17,10 @@ export default {
   },
 };
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 $h: 22px;
 $h2: $h - 4px;
-.button {
+.hao-switch {
   position: relative;
   height: $h;
   width: $h * 2;
@@ -37,7 +37,7 @@ $h2: $h - 4px;
     background: white;
     transition: left 0.2s;
   }
-  &.checked {
+  &.hao-checked {
     background-color: blue;
     > .dot {
       left: calc(100% - #{$h2} - 2px);

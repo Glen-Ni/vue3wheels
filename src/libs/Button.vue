@@ -34,9 +34,13 @@ $radius: 4px;
   border: 1px solid $border-color;
   border-radius: $radius;
   box-shadow: 0 1px 0 fade-out($color: black, $amount: 0.95);
+  transition: all 0.4s;
   &:hover, &:focus {
     color: $blue;
     border-color: $blue;
+  }
+  &:focus {
+    outline: none;
   }
   & + & {
     margin-left: 8px;

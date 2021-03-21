@@ -1,6 +1,7 @@
 import { createApp } from 'vue';
 import App from './App.vue';
-import './index.css';
+import './libs/hao.scss';
+import './index.scss';
 import { router } from './router';
 
 
