@@ -76,11 +76,3 @@ export default {
   },
 };
 </script>
-<style lang="scss">
-h2 {
-  line-height: 40px;
-}
-.inner-block {
-  padding: 6px;
-}
-</style>
