@@ -106,6 +106,7 @@ $radius: 4px;
   &.hao-level-primary {
     color: #fff;
     background: #1890ff;
+    border-color: #1890ff;
     &:hover,
     &:focus {
       background: lighten($blue, 10%);
