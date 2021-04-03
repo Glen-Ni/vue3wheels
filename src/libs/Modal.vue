@@ -1,21 +1,23 @@
 <template>
-  <div class="hao-modal-overlay"></div>
-  <div class="hao-modal-wrapper">
-    <div class="hao-modal">
-      <header>
-        标题
-        <div class="hao-modal-close"></div>
-      </header>
-      <main>
-        <p>内容aaaaaaaaaaaaa</p>
-        <p>内容aaaaaaaaaaaaa</p>
-      </main>
-      <footer>
-        <Button level="primary">确定</Button>
-        <Button>取消</Button>
-      </footer>
+  <template v-if="visible">
+    <div class="hao-modal-overlay" @click="onClickOverlay"></div>
+    <div class="hao-modal-wrapper">
+      <div class="hao-modal">
+        <header>
+          标题
+          <div class="hao-modal-close" @click="close"></div>
+        </header>
+        <main>
+          <p>内容aaaaaaaaaaaaa</p>
+          <p>内容aaaaaaaaaaaaa</p>
+        </main>
+        <footer>
+          <Button level="primary" @click="onSuccess">确定</Button>
+          <Button @click="onCancel">取消</Button>
+        </footer>
+      </div>
     </div>
-  </div>
+  </template>
 </template>
 <script>
 import Button from "./Button.vue";
@@ -26,9 +28,47 @@ export default {
       type: Boolean,
       default: false,
     },
+    closeOnClickOverlay: {
+      type: Boolean,
+      default: true,
+    },
+    success: {
+      type: Function,
+    },
+    cancel: {
+      type: Function,
+    },
   },
   components: {
     Button,
+  },
+  setup(props, context) {
+    const close = () => {
+      context.emit("update:visible", false);
+    };
+    const onClickOverlay = () => {
+      const { closeOnClickOverlay } = props;
+      if (!closeOnClickOverlay) return;
+      context.emit("update:visible", false);
+    };
+    const onSuccess = () => {
+      if (props.success?.() !== false) {
+        close();
+      }
+    };
+    const onCancel = () => {
+      // if (props.cancel?.() !== false) {
+      //   close();
+      // }
+      context.emit('cancel')
+      close();
+    };
+    return {
+      close,
+      onClickOverlay,
+      onSuccess,
+      onCancel
+    };
   },
 };
 </script>
@@ -48,25 +88,24 @@ $border-color: #d9d9d9;
   top: 50%;
   left: 50%;
   z-index: 11;
-  transform: translateX(-50%);
-  transform: translateY(-50%);
+  transform: translate(-50%, -50%);
 }
 .hao-modal {
   background-color: #fff;
   border-radius: 3px;
   box-shadow: 0 0 10px fade-out($color: #000000, $amount: 0.5);
   min-width: 16em;
-  >header {
+  > header {
     padding: 12px 16px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid $border-color;
   }
-  >main {
+  > main {
     padding: 12px 16px;
   }
-  >footer {
+  > footer {
     border-top: 1px solid $border-color;
     padding: 12px 16px;
     text-align: right;
@@ -79,7 +118,7 @@ $border-color: #d9d9d9;
     cursor: pointer;
     &::before,
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       height: 1px;
       background: black;
@@ -95,7 +134,6 @@ $border-color: #d9d9d9;
     &::after {
       transform: translate(-50%, -50%) rotate(45deg);
     }
-
   }
 }
 </style>
