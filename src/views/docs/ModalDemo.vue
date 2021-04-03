@@ -8,7 +8,11 @@
         :closeOnClickOverlay="true"
         :success="f1"
         :cancel="f2"
-      ></Modal>
+        title="自定义标题"
+      >
+        <p>内容1</p>
+        <p>内容2</p>
+      </Modal>
     </div>
   </section>
 </template>

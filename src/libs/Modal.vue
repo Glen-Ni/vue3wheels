@@ -4,12 +4,11 @@
     <div class="hao-modal-wrapper">
       <div class="hao-modal">
         <header>
-          标题
+          {{title}}
           <div class="hao-modal-close" @click="close"></div>
         </header>
         <main>
-          <p>内容aaaaaaaaaaaaa</p>
-          <p>内容aaaaaaaaaaaaa</p>
+          <slot/>
         </main>
         <footer>
           <Button level="primary" @click="onSuccess">确定</Button>
@@ -38,6 +37,10 @@ export default {
     cancel: {
       type: Function,
     },
+    title: {
+      type: String,
+      default: '提示'
+    }
   },
   components: {
     Button,
